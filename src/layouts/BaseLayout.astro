@@ -1,0 +1,21 @@
+
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title = 'Hannes Klaas' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={Astro.site?.locale || 'et'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | hannesklaas.eu</title>
+  </head>
+  <body class="font-sans text-neutralDark bg-neutralLight">
+    <Header />
+    <main class="min-h-screen">
+      {Astro.children}
+    </main>
+    <Footer />
+  </body>
+</html>

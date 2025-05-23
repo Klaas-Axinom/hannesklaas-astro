@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main      # või muuda oma haru nime järgi
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "news_et"
+    label: "Uudised (ET)"
+    folder: "content/et/uudised"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Pealkiri", name: "title", widget: "string" }
+      - { label: "Kuupäev",   name: "date",  widget: "datetime" }
+      - { label: "Sisu",      name: "body",  widget: "markdown" }
+
+  - name: "news_en"
+    label: "News (EN)"
+    folder: "content/en/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title",     name: "title", widget: "string" }
+      - { label: "Date",      name: "date",  widget: "datetime" }
+      - { label: "Body",      name: "body",  widget: "markdown" }
